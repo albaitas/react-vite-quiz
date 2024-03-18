@@ -22,7 +22,8 @@ function Home() {
           <li
             key={i}
             className={classNames({
-              correct: i === data.ans && selectedOption !== null
+              correct: i === data.ans && selectedOption !== null,
+              wrong: i === selectedOption && i !== data.ans
             })}
           >
             {option}
