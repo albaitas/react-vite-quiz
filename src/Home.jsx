@@ -26,9 +26,10 @@ function Home() {
     setLocked(true);
     setSelectedOption(null);
     setTimerActive(true);
+    setProgress(0);
     setIndex((prevIndex) => prevIndex + 1);
     setData(questionsData[index + 1]);
-  }, [setLock, setSelectedOption, setTimerActive, index]);
+  }, [setLock, setSelectedOption, setTimerActive, setProgress, index]);
 
   const handleOptionClick = (value) => {
     if (lock) {
