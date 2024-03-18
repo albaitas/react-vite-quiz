@@ -62,6 +62,19 @@ function Home() {
     }
   };
 
+  const reset = () => {
+    setIndex(0);
+    setData(questionsData[0]);
+    setLock(true);
+    setLocked(true);
+    setResult(false);
+    setSelectedOption(null);
+    setScore(0);
+    setProgress(0);
+    setTimerActive(true);
+    setTotalTime(0);
+  };
+
   return (
     <div className='container'>
       {result ? (
@@ -73,6 +86,7 @@ function Home() {
           <h3>
             Total Time <span className='blue'>{formatTime(totalTime)}</span>
           </h3>
+          <button onClick={reset}>Reset</button>
         </div>
       ) : (
         <>
