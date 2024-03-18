@@ -3,6 +3,7 @@ import { useState, useEffect, useCallback } from 'react';
 import classNames from 'classnames';
 
 function Home() {
+  const [index, setIndex] = useState(0);
   return <></>;
 }
 
