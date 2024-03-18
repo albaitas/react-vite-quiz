@@ -1,6 +1,9 @@
 const playSound = (sound) => {
   const audio = new Audio(`/sounds/${sound}`);
   audio.play();
+  window.addEventListener('beforeunload', () => {
+    audio.pause();
+  });
 };
 
 export const playCorrectAnswer = () => {
