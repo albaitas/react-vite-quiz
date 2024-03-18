@@ -4,6 +4,7 @@ import classNames from 'classnames';
 
 function Home() {
   const [index, setIndex] = useState(0);
+  const [data, setData] = useState(questionsData[index]);
   return <></>;
 }
 
