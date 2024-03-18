@@ -77,6 +77,9 @@ function Home() {
           <button disabled={locked} onClick={next}>
             Next
           </button>
+          <div className='question-number'>
+            {index + 1} of {questionsData.length} questions
+          </div>
         </>
       )}
     </div>
