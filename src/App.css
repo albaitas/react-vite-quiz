@@ -1,42 +1,116 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+body {
+  background: rgba(48, 16, 255, 1);
+}
+.container {
+  max-width: 640px;
+  margin: auto;
+  margin-top: 50px;
+  background: white;
+  color: #262626;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border-radius: 10px;
+  padding: 40px 50px;
+}
+.container hr {
+  height: 2px;
+  border: none;
+  background: #707070;
+}
+.container h2 {
+  font-size: 27px;
+  font-weight: 500;
+}
+.container ul li {
+  display: flex;
+  align-items: center;
+  height: 70px;
+  padding-left: 15px;
+  border: 1px solid #686868;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-size: 20px;
+  cursor: pointer;
+}
+.container button {
+  margin: auto;
+  width: 250px;
+  height: 65px;
+  background: #553f9a;
+  color: #fff;
+  font-size: 25px;
+  font-weight: 500;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.container .question-number {
+  margin: auto;
+  font-size: 18px;
+}
+.correct {
+  background: #dffff2;
+  border-color: #00d397;
+}
+.wrong {
+  background: #ffebeb;
+  border-color: #ff4a4a;
+}
+.none {
+  background: #ffffff;
+}
+
+.container progress {
+  width: auto;
+}
+
+.example {
+  border: 1px solid #ccc;
+  font-family: monospace, consolas, 'courier new';
+  border-radius: 2px;
+  background: rgb(241, 240, 240);
+}
+.text {
+  font-size: 17px;
+  text-align: justify;
+}
+.center {
   text-align: center;
 }
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+.blue {
+  color: #0152b2;
+  font-size: 20px;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+.multicolortext {
+  background-image: linear-gradient(to left, indigo, violet, red);
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.result {
+  text-align: center;
 }
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+.result h3 {
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+@media screen and (max-width: 480px) {
+  .container {
+    border-radius: 0px;
+    padding: 10px 15px;
   }
-  to {
-    transform: rotate(360deg);
+  .container ul li {
+    height: 70px;
+    padding-left: 15px;
+
+    font-size: 16px;
   }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
 }
