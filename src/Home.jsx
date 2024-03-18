@@ -5,6 +5,7 @@ import classNames from 'classnames';
 function Home() {
   const [index, setIndex] = useState(0);
   const [data, setData] = useState(questionsData[index]);
+  const [lock, setLock] = useState(true);
   return (
     <>
       <h1>Quiz App</h1>
