@@ -35,6 +35,7 @@ function Home() {
     const incrementProgress = () => {
       if (timerActive && progress < 200) {
         setProgress((prevProgress) => prevProgress + 10);
+        setTotalTime((prevTotalTime) => prevTotalTime + 1);
       }
     };
     const timeoutId = setTimeout(() => {
