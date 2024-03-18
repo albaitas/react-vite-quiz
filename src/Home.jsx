@@ -7,6 +7,8 @@ function Home() {
   const [data, setData] = useState(questionsData[index]);
   const [lock, setLock] = useState(true);
   const [score, setScore] = useState(0);
+  const [selectedOption, setSelectedOption] = useState(null);
+
   return (
     <>
       <h1>Quiz App</h1>
@@ -17,7 +19,14 @@ function Home() {
 
       <ul>
         {data.options.map((option, i) => (
-          <li key={i}>{option}</li>
+          <li
+            key={i}
+            className={classNames({
+              correct: i === data.ans && selectedOption !== null
+            })}
+          >
+            {option}
+          </li>
         ))}
       </ul>
     </>
