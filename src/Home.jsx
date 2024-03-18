@@ -31,6 +31,21 @@ function Home() {
     setData(questionsData[index + 1]);
   }, [setLock, setSelectedOption, setTimerActive, setProgress, index]);
 
+  useEffect(() => {
+    const incrementProgress = () => {
+      if (timerActive && progress < 200) {
+        setProgress((prevProgress) => prevProgress + 10);
+      }
+    };
+    const timeoutId = setTimeout(() => {
+      incrementProgress();
+      if (progress >= 200) {
+        next();
+      }
+    }, 1000);
+    return () => clearTimeout(timeoutId);
+  }, [progress, timerActive, next]);
+
   const handleOptionClick = (value) => {
     if (lock) {
       setSelectedOption(value);
