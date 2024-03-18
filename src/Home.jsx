@@ -2,6 +2,7 @@ import { questionsData } from './data';
 import { useState, useEffect, useCallback } from 'react';
 import classNames from 'classnames';
 import { playCorrectAnswer, playWrongAnswer, playQuizEnd } from './utils/playSound';
+import { formatTime } from './utils/formatTime';
 
 function Home() {
   const [index, setIndex] = useState(0);
@@ -12,6 +13,7 @@ function Home() {
   const [timerActive, setTimerActive] = useState(true);
   const [locked, setLocked] = useState(true);
   const [result, setResult] = useState(false);
+  const [totalTime, setTotalTime] = useState(0);
 
   const next = useCallback(() => {
     if (index === questionsData.length - 1) {
@@ -49,6 +51,9 @@ function Home() {
           <h1 className='multicolortext'>Congratulations!!!</h1>
           <h3>
             You Scored <span className='blue'>{score}</span> out of <span className='blue'>{questionsData.length}</span>
+          </h3>
+          <h3>
+            Total Time <span className='blue'>{formatTime(totalTime)}</span>
           </h3>
         </div>
       ) : (
