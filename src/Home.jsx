@@ -1,6 +1,7 @@
 import { questionsData } from './data';
 import { useState, useEffect, useCallback } from 'react';
 import classNames from 'classnames';
+import { playCorrectAnswer, playWrongAnswer, playQuizEnd } from './utils/playSound';
 
 function Home() {
   const [index, setIndex] = useState(0);
@@ -9,6 +10,20 @@ function Home() {
   const [score, setScore] = useState(0);
   const [selectedOption, setSelectedOption] = useState(null);
   const [timerActive, setTimerActive] = useState(true);
+
+  const handleOptionClick = (value) => {
+    if (lock) {
+      setSelectedOption(value);
+      setLock(false);
+      setTimerActive(false);
+      if (data.ans === value) {
+        playCorrectAnswer();
+        setScore((prev) => prev + 1);
+      } else {
+        playWrongAnswer();
+      }
+    }
+  };
 
   return (
     <>
@@ -26,6 +41,7 @@ function Home() {
               correct: i === data.ans && selectedOption !== null,
               wrong: i === selectedOption && i !== data.ans
             })}
+            onClick={() => handleOptionClick(i)}
           >
             {option}
           </li>
