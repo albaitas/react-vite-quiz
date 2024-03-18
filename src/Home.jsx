@@ -12,6 +12,15 @@ function Home() {
   const [timerActive, setTimerActive] = useState(true);
   const [locked, setLocked] = useState(true);
 
+  const next = useCallback(() => {
+    setLock(true);
+    setLocked(true);
+    setSelectedOption(null);
+    setTimerActive(true);
+    setIndex((prevIndex) => prevIndex + 1);
+    setData(questionsData[index + 1]);
+  }, [setLock, setSelectedOption, setTimerActive, index]);
+
   const handleOptionClick = (value) => {
     if (lock) {
       setSelectedOption(value);
@@ -49,6 +58,9 @@ function Home() {
           </li>
         ))}
       </ul>
+      <button disabled={locked} onClick={next}>
+        Next
+      </button>
     </>
   );
 }
