@@ -47,6 +47,9 @@ function Home() {
       {result ? (
         <div className='result'>
           <h1 className='multicolortext'>Congratulations!!!</h1>
+          <h3>
+            You Scored <span className='blue'>{score}</span> out of <span className='blue'>{questionsData.length}</span>
+          </h3>
         </div>
       ) : (
         <>
