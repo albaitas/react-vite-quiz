@@ -8,6 +8,7 @@ function Home() {
   const [lock, setLock] = useState(true);
   const [score, setScore] = useState(0);
   const [selectedOption, setSelectedOption] = useState(null);
+  const [timerActive, setTimerActive] = useState(true);
 
   return (
     <>
