@@ -6,6 +6,7 @@ function Home() {
   const [index, setIndex] = useState(0);
   const [data, setData] = useState(questionsData[index]);
   const [lock, setLock] = useState(true);
+  const [score, setScore] = useState(0);
   return (
     <>
       <h1>Quiz App</h1>
