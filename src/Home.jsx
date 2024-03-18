@@ -10,12 +10,14 @@ function Home() {
   const [score, setScore] = useState(0);
   const [selectedOption, setSelectedOption] = useState(null);
   const [timerActive, setTimerActive] = useState(true);
+  const [locked, setLocked] = useState(true);
 
   const handleOptionClick = (value) => {
     if (lock) {
       setSelectedOption(value);
       setLock(false);
       setTimerActive(false);
+      setLocked(false);
       if (data.ans === value) {
         playCorrectAnswer();
         setScore((prev) => prev + 1);
