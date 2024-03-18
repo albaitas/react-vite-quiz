@@ -14,6 +14,7 @@ function Home() {
   const [locked, setLocked] = useState(true);
   const [result, setResult] = useState(false);
   const [totalTime, setTotalTime] = useState(0);
+  const [progress, setProgress] = useState(0);
 
   const next = useCallback(() => {
     if (index === questionsData.length - 1) {
@@ -59,7 +60,7 @@ function Home() {
       ) : (
         <>
           <h1>Quiz App</h1>
-
+          <progress value={progress} max='200'></progress>
           <h3 className='blue'>
             {index + 1}. {data.question}
           </h3>
