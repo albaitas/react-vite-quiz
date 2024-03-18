@@ -1,3 +1,4 @@
+import { questionsData } from './data';
 function Home() {
   return <></>;
 }
