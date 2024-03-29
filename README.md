@@ -4,7 +4,7 @@ This is a 100 question quiz project written using Vite, React, with sound and ti
 
 ## Demo
 
-Project hosted on Vercel: https://react-vite-quiz.vercel.app/
+Project hosted on Vercel: https://react-vite-quiz-v1.vercel.app/
 
 ## Features
 
